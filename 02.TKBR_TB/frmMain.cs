@@ -39,7 +39,7 @@ namespace TKBR_TB
                 pnlLane2_Info.Controls.Clear();
                 pnlLane2_Footer.Controls.Clear();
                 pnlLane2_Info.Controls.Add(new UC.ucInfo(nohinSaki: sb.ToString(), zansu: 0) { Dock = DockStyle.Fill });
-                pnlLane2_Footer.Controls.Add(new UC.ucProgress("321 / 1001") { Dock = DockStyle.Fill });
+                pnlLane2_Footer.Controls.Add(new UC.ucProgress_Printing() { Dock = DockStyle.Fill });
             }
             catch (Exception ex)
             {
