@@ -1,0 +1,94 @@
+<?xml version="1.0"  encoding="shift_jis" ?>
+<Messages>
+  <!-- 
+    ・Category
+          I:情報 , E:注意 , Q:問い合わせ , C:警告
+    ・Description
+          置き換え文字は
+            {0}:１つ目 {1}:２つ目 …
+          の順に設定してください。
+  -->
+  <Message Category="C" Cd="999" Description="{0}" />
+
+
+  <Message Category="E" Cd="1"   Description="{0}を入力して下さい。" />
+  <Message Category="E" Cd="2"   Description="{0}を選択して下さい。" />
+  <Message Category="E" Cd="3"   Description="{0}が間違っています。" />
+  <Message Category="E" Cd="4"   Description="{0}が存在しません。" />
+  <Message Category="E" Cd="5"   Description="{0}に失敗しました。" />
+  <Message Category="E" Cd="6"   Description="{0}のため削除できません。" />
+  <Message Category="E" Cd="7"   Description="該当データが存在しませんでした。" />
+  <Message Category="E" Cd="8"   Description="{0}の桁数エラーです。" />
+  <Message Category="E" Cd="9"   Description="{0}ため、{1}できません。" />
+  <Message Category="E" Cd="10"  Description="{0}が発生しました。" />
+  <Message Category="E" Cd="11"  Description="{0}に{1}されました。" />
+  <Message Category="E" Cd="12"  Description="{0}は{1}で入力してください。" />
+  <Message Category="E" Cd="13"  Description="{0}は{1}されています。" />
+  <Message Category="E" Cd="14"  Description="{0}が{1}ありません。" />
+  <Message Category="E" Cd="15"  Description="{0}に禁則文字が含まれています。" />
+  <Message Category="E" Cd="16"  Description="{0}に無効な値が入力されました。" />
+  <Message Category="E" Cd="17"  Description="{0}にマイナスは入力できません。" />
+  <Message Category="E" Cd="18"  Description="{0}に0は入力できません。" />
+  <Message Category="E" Cd="19"  Description="{0}に小数は入力できません。" />
+  <Message Category="E" Cd="20"  Description="{0}できません。" />
+  <Message Category="E" Cd="21"  Description="検索結果がシステム上限値（{0}件）を超えている為、表示出来ません。({1}件)　条件を絞り込んで、再度検索してください。" />
+  <Message Category="E" Cd="22"  Description="{0}を指定してください。" />
+  <Message Category="E" Cd="23"  Description="{0}より選択してください。" />
+  <Message Category="E" Cd="24"  Description="{0}が複数選択されています。" />
+  <Message Category="E" Cd="25"  Description="サーバの空き領域が不足しています。WEB表示可能期間を再考して下さい。{0}" />
+  <Message Category="E" Cd="26"  Description="{0}は1900年以降を設定してください。" />
+  <Message Category="E" Cd="30"  Description="データベースの接続に失敗しました。ご確認の上もう一度実行して下さい。" />
+  <Message Category="E" Cd="31"  Description="行選択をせずに {0} してください。" />
+  <Message Category="E" Cd="32"  Description="対象行を 1行選択してください。" />
+  <Message Category="E" Cd="33"  Description="商品分類が変換できませんでした。" />
+  <Message Category="E" Cd="34"  Description="{0}が重複しています。別の{0}で登録してください。" />
+  <Message Category="E" Cd="35"  Description="{0}が表示されていません。" />
+  <Message Category="E" Cd="36"  Description="グループの最大件数がシステム上限値（{0}件）を超える為、設定出来ません。" />
+  <Message Category="E" Cd="37"  Description="マーク種類の最大件数がシステム上限値（{0}件）を超える為、設定出来ません。" />
+  <Message Category="E" Cd="38"  Description="{0}が存在しませんでした。" />
+  <Message Category="E" Cd="39"  Description="{0}の値が不正です。" />
+  <Message Category="E" Cd="40"  Description="{0}がありませんでした。" />
+  <Message Category="E" Cd="41"  Description="{0}が入力されていません。" />
+  <Message Category="E" Cd="42"  Description="{0}が選択されていません。" />
+	
+  <Message Category="E" Cd="100" Description="処理対象は１行のみ選択してください。" />
+  <Message Category="E" Cd="101" Description="{0}が既に登録されています。" />
+  <Message Category="E" Cd="102" Description="データの更新に失敗しました。他の担当者により更新されています。" />
+  <Message Category="E" Cd="103" Description="登録されているパスワードと一致しません。" />
+  <Message Category="E" Cd="104" Description="新パスワードと新パスワード再入力の値が一致しませんでした。" />
+  <Message Category="E" Cd="105" Description="行が選択されていません。" />
+  <Message Category="E" Cd="106" Description="対象の未印刷伝票がありません。" />
+　<Message Category="E" Cd="107" Description="データの更新に失敗しました。{0}他の担当者により更新されています。" />
+　<Message Category="E" Cd="108" Description="画像ファイルが存在しません。" />
+  　
+  <Message Category="E" Cd="201" Description="{0}超えています。{1}してください。" />
+
+
+  <Message Category="E" Cd="999" Description="{0}" />
+
+
+  <Message Category="I" Cd="1"   Description="{0}しました。" />
+  <Message Category="I" Cd="2"   Description="{0}を登録しました。" />
+  <Message Category="I" Cd="3"   Description="{0}を更新しました。" />
+  <Message Category="I" Cd="4"   Description="{0}を削除しました。" />
+  <Message Category="I" Cd="5"   Description="{0}が完了しました。" />
+  
+  <Message Category="I" Cd="999" Description="{0}" />
+
+
+  <Message Category="Q" Cd="1"   Description="{0}します。よろしいですか？" />
+  <Message Category="Q" Cd="2"   Description="{0}しますか？" />
+  <Message Category="Q" Cd="3"   Description="{0}していますか？" />
+  <Message Category="Q" Cd="4"   Description="{0}よろしいですか？" />
+  <Message Category="Q" Cd="5"   Description="{0}します。変更内容は更新されません、よろしいですか？" />
+  <Message Category="Q" Cd="6"   Description="検索結果が表示確認件数（{0}件）を超えています。表示しますか？({1}件)" />
+  <Message Category="Q" Cd="7"   Description="{0}よろしいですか？{1}" />
+  <Message Category="Q" Cd="8"   Description="データが編集されています。登録しますか？" />
+
+
+ 
+  <Message Category="Q" Cd="999" Description="{0}" />
+
+
+
+</Messages>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ColorList>
+
+  <Default Name="FormBackColor"    R="240" G="240" B="240" />
+  <Default Name="HeaderPanel"      R="70" G="130" B="180" />
+  <Default Name="FooterPanel"      R="255" G="255" B="255" />
+  <Default Name="GotFocusColor"    R="204" G="204" B="255" />
+  <Default Name="LostFocusColor"   R="255" G="255" B="255" />
+  <Default Name="LabelColor"       R="255" G="255" B="128" />
+  <Default Name="SpdHeadColor"     R="180" G="180" B="180" />
+  <Default Name="SpdSelectColor"   R="32"  G="64"  B="255" />
+  <Default Name="SpdDefaultColor"  R="255" G="255" B="255" />
+  <Default Name="SpdDispColor"     R="255" G="255" B="255" />
+  <Default Name="HissuColor"       R="255" G="238" B="238" />
+
+  <Master  Name="FormBackColor"    R="255" G="255" B="231" />
+  <Master  Name="HeaderPanel"      R="255" G="255" B="255" />
+  <Master  Name="FooterPanel"      R="255" G="255" B="255" />
+  <Master  Name="GotFocusColor"    R="204" G="204" B="255" />
+  <Master  Name="LostFocusColor"   R="255" G="255" B="255" />
+  <Master  Name="LabelColor"       R="255" G="255" B="128" />
+  <Master  Name="SpdHeadColor"     R="180" G="180" B="180" />
+  <Master  Name="SpdSelectColor"   R="32"  G="64"  B="255" />
+  <Master  Name="SpdDefaultColor"  R="255" G="255" B="255" />
+  <Master  Name="SpdDispColor"     R="255" G="255" B="255" />
+  <Master  Name="HissuColor"       R="255" G="208" B="208" />
+   
+</ColorList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

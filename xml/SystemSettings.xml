@@ -1,0 +1,19 @@
+<?xml version="1.0"  encoding="shift_jis" ?>
+
+<SystemSettings>
+
+  <!--SQLServerの接続情報-->
+  <SQLServer>
+    <Host>172.16.2.10</Host>
+    <Port>1433</Port>
+    <Database>jcom_kenpin_system</Database>
+    <UserID>sa</UserID>
+    <Password>smt</Password>
+  </SQLServer>
+	
+  <!--TCPIPの接続情報-->
+  <TcpIp>
+	<Port>2001</Port>
+	<LogDisplay>1</LogDisplay>
+  </TcpIp>
+</SystemSettings>

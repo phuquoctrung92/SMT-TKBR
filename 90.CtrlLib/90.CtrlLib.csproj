@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DB42475-79AB-0B2A-2166-64DC465CD19D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>CtrlLib</RootNamespace>
+    <AssemblyName>CtrlLib</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
+    <LangVersion>latest</LangVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>bin\Debug\CtrlLib.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036,1570,1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\CtrlLib.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>bin\x86\Debug\CtrlLib.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>bin\x86\Release\CtrlLib.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="50.Form\BranchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="50.Form\BranchForm.Designer.cs">
+      <DependentUpon>BranchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="50.Form\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="50.Form\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Button\ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\DataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\GroupBoxWithBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\ucLabelBlinking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\ucLabelBlinking.Designer.cs" />
+    <Compile Include="99.MyControls\20.Control\NullableNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\TextProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucFunction.cs" />
+    <Compile Include="99.MyControls\20.Control\ucFunction.Designer.cs">
+      <DependentUpon>ucFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucGroupBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucGroupBox.Designer.cs">
+      <DependentUpon>ucGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="80.Base\WfrBase.cs" />
+    <Compile Include="99.MyControls\10.MyForms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\10.MyForms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Button\BaseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Button\MenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\CheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\ColorLabelBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\LabelBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\TransparentLabel.Designer.cs">
+      <DependentUpon>TransparentLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Label\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Text\BaseTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Text\DateBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Text\FileBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Text\NumberBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Text\StringBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\Text\TimeBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucComboBox.Designer.cs">
+      <DependentUpon>ucComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucDateTimePicker.designer.cs">
+      <DependentUpon>ucDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\20.Control\ucDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\10.Message\frmMessageTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\10.Message\frmMessageTextBox.designer.cs">
+      <DependentUpon>frmMessageTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\10.Message\frmMessage.designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\10.Message\frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\20.Print\frmPreview.Designer.cs">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\20.Print\frmPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\20.Print\frmPrint.designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\20.Print\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\20.Print\IPrint.cs" />
+    <Compile Include="99.MyControls\30.CommonForms\20.Print\xmlPrinter.cs" />
+    <Compile Include="99.MyControls\30.CommonForms\30.Input\frmNumberInput.designer.cs">
+      <DependentUpon>frmNumberInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99.MyControls\30.CommonForms\30.Input\frmNumberInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\40.Classes\ClsMsgBox.cs" />
+    <Compile Include="99.MyControls\40.Classes\ComboData.cs" />
+    <Compile Include="99.MyControls\40.Classes\Common.cs" />
+    <Compile Include="99.MyControls\20.Control\DotNetBarTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="99.MyControls\50.Modules\Delegates.cs" />
+    <Compile Include="99.MyControls\50.Modules\Enums.cs" />
+    <Compile Include="99.MyControls\50.Modules\EventArgs.cs" />
+    <Compile Include="My Project\AssemblyInfo.cs" />
+    <Compile Include="My Project\Application.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="50.Form\BranchForm.resx">
+      <DependentUpon>BranchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="50.Form\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\10.MyForms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\20.Control\Label\ucLabelBlinking.resx" />
+    <EmbeddedResource Include="99.MyControls\20.Control\Text\BaseTextBox.resx">
+      <DependentUpon>BaseTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\20.Control\ucComboBox.resx">
+      <DependentUpon>ucComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\20.Control\ucDateTimePicker.resx">
+      <DependentUpon>ucDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\20.Control\ucFunction.resx">
+      <DependentUpon>ucFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\20.Control\ucGroupBox.resx">
+      <DependentUpon>ucGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\30.CommonForms\10.Message\frmMessageTextBox.resx">
+      <DependentUpon>frmMessageTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\30.CommonForms\10.Message\frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\30.CommonForms\20.Print\frmPreview.resx">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\30.CommonForms\20.Print\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99.MyControls\30.CommonForms\30.Input\frmNumberInput.resx">
+      <DependentUpon>frmNumberInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CtrlLib.My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>CtrlLib.My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\99.SmtLib\99.SmtLib.csproj">
+      <Project>{834e2686-d37f-072f-22ca-84b83d0fdcbe}</Project>
+      <Name>99.SmtLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWfr2016c">
+      <Guid>{31A35B35-F7B9-4946-9AE1-2DB16E5DC6F9}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
