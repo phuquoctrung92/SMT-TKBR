@@ -9,15 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CtrlLib;
 using CtrlLib.MyControls;
-using TKBR_Lib.Forms.明細検索;
 
-namespace TKBR_Lib.Forms.仕分登録
+namespace TKBR_Lib.Forms
 {
     public partial class frmShiwakeToroku : MainForm
     {
         #region Constructor
-        private List<NohinsakiModel> lstNohinsaki;
-        private List<MeisaiModel> lstMeisai;
+        private List<TorokuNohinsakiModel> lstNohinsaki;
+        private List<TorokuMeisaiModel> lstMeisai;
         public frmShiwakeToroku()
         {
             InitializeComponent();
@@ -44,9 +43,41 @@ namespace TKBR_Lib.Forms.仕分登録
         }
         private void btnMeisaiKensaku_Click(object sender, EventArgs e)
         {
-            var frm = new frmMeisaiKensaku();
-            frm.ShowDialog();
+            try
+            {
+                var frm = new frmMeisaiKensaku();
+                this.Hide();
+                frm.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                ClsMsgBox.ShowMessage(Text, "E999", ex);
+            }
+            finally
+            {
+                this.Show();
+            }
         }
+
+        private void btnNohinsakiKensaku_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new frmNohinSakiSearch();
+                this.Hide();
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ClsMsgBox.ShowMessage(Text, "E999", ex);
+            }
+            finally
+            {
+                this.Show();
+            }
+            
+        }
+
         private void dgvMeisai_DataSourceChanged(object sender, EventArgs e)
         {
             lblKosuGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分個数"].Value?.ToString(), out double v) ? v : 0).ToString("N0");
@@ -93,19 +124,19 @@ namespace TKBR_Lib.Forms.仕分登録
         }
         private void LoadData()
         {
-            lstNohinsaki = new List<NohinsakiModel>();
-            lstNohinsaki.Add(new NohinsakiModel("ABC-MART", "埼玉県", "草加市吉町４－１０－４５Ｎｅｔ－ＭＡＲＴ準備倉庫", "460", "29.30"));
-            lstNohinsaki.Add(new NohinsakiModel("ABCNETMART／小山企業株式会社", "埼玉県", "草加市青柳１－５－３５草加第３センター", "6231", "362.85"));
+            lstNohinsaki = new List<TorokuNohinsakiModel>();
+            lstNohinsaki.Add(new TorokuNohinsakiModel("ABC-MART", "埼玉県", "草加市吉町４－１０－４５Ｎｅｔ－ＭＡＲＴ準備倉庫", "460", "29.30"));
+            lstNohinsaki.Add(new TorokuNohinsakiModel("ABCNETMART／小山企業株式会社", "埼玉県", "草加市青柳１－５－３５草加第３センター", "6231", "362.85"));
 
-            lstMeisai = new List<MeisaiModel>();
-            lstMeisai.Add(new MeisaiModel("ABC-MART", "27103361", "142643123011", "5", "0.62", "5", "0.62"));
-            lstMeisai.Add(new MeisaiModel("ABC-MART", "27115444", "142643163563", "393", "25.37", "393", "25.37"));
-            lstMeisai.Add(new MeisaiModel("ABC-MART", "27118691", "142643177751", "42", "2.22", "42", "2.22"));
-            lstMeisai.Add(new MeisaiModel("ABC-MART", "27121286", "142643192090", "20", "1.08", "20", "1.08"));
-            lstMeisai.Add(new MeisaiModel("ABCNETMART", "27103360", "142643123000", "50", "4.25", "50", "4.25"));
-            lstMeisai.Add(new MeisaiModel("ABCNETMART", "27115381", "142643162955", "310", "25.72", "310", "25.72"));
-            lstMeisai.Add(new MeisaiModel("ABCNETMART", "27118221", "142643173131", "31", "1.86", "31", "1.86"));
-            lstMeisai.Add(new MeisaiModel("小山企業株式会社", "27103359", "142643122996", "5,840", "331.12", "150", "8.50"));
+            lstMeisai = new List<TorokuMeisaiModel>();
+            lstMeisai.Add(new TorokuMeisaiModel("ABC-MART", "27103361", "142643123011", "5", "0.62", "5", "0.62"));
+            lstMeisai.Add(new TorokuMeisaiModel("ABC-MART", "27115444", "142643163563", "393", "25.37", "393", "25.37"));
+            lstMeisai.Add(new TorokuMeisaiModel("ABC-MART", "27118691", "142643177751", "42", "2.22", "42", "2.22"));
+            lstMeisai.Add(new TorokuMeisaiModel("ABC-MART", "27121286", "142643192090", "20", "1.08", "20", "1.08"));
+            lstMeisai.Add(new TorokuMeisaiModel("ABCNETMART", "27103360", "142643123000", "50", "4.25", "50", "4.25"));
+            lstMeisai.Add(new TorokuMeisaiModel("ABCNETMART", "27115381", "142643162955", "310", "25.72", "310", "25.72"));
+            lstMeisai.Add(new TorokuMeisaiModel("ABCNETMART", "27118221", "142643173131", "31", "1.86", "31", "1.86"));
+            lstMeisai.Add(new TorokuMeisaiModel("小山企業株式会社", "27103359", "142643122996", "5,840", "331.12", "150", "8.50"));
         }
         private void LoadDGVNohinSaki()
         {
@@ -229,7 +260,7 @@ namespace TKBR_Lib.Forms.仕分登録
         #endregion
     }
     #region Models
-    public class MeisaiModel
+    public class TorokuMeisaiModel
     {
         private string nohinsakimei;
         private string packlist;
@@ -247,9 +278,9 @@ namespace TKBR_Lib.Forms.仕分登録
         public string Shiwakekosu { get => shiwakekosu; set => shiwakekosu = value; }
         public string Shiwakecbm { get => shiwakecbm; set => shiwakecbm = value; }
 
-        public MeisaiModel() { }
+        public TorokuMeisaiModel() { }
 
-        public MeisaiModel(string nohinsakimei, string packlist, string toiawasebango, string mifuriwakekosu, string mifuriwakecbm, string shiwakekosu, string shiwakecbm)
+        public TorokuMeisaiModel(string nohinsakimei, string packlist, string toiawasebango, string mifuriwakekosu, string mifuriwakecbm, string shiwakekosu, string shiwakecbm)
         {
             this.Nohinsakimei = nohinsakimei;
             this.Packlist = packlist;
@@ -260,7 +291,7 @@ namespace TKBR_Lib.Forms.仕分登録
             this.Shiwakecbm = shiwakecbm;
         }
     }
-    public class NohinsakiModel
+    public class TorokuNohinsakiModel
     {
         private string nohinsakimei;
         private string todofuken;
@@ -274,9 +305,9 @@ namespace TKBR_Lib.Forms.仕分登録
         public string Kosu { get => kosu; set => kosu = value; }
         public string Cbm { get => cbm; set => cbm = value; }
 
-        public NohinsakiModel() { }
+        public TorokuNohinsakiModel() { }
 
-        public NohinsakiModel(string nohinsakimei, string todofuken, string jusho, string kosu, string cbm)
+        public TorokuNohinsakiModel(string nohinsakimei, string todofuken, string jusho, string kosu, string cbm)
         {
             this.nohinsakimei = nohinsakimei;
             this.todofuken = todofuken;

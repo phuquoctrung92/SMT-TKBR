@@ -101,6 +101,7 @@
             this.btnLaneSetting.TabIndex = 82;
             this.btnLaneSetting.Text = "レーン設定";
             this.btnLaneSetting.UseVisualStyleBackColor = true;
+            this.btnLaneSetting.Click += new System.EventHandler(this.btnMenu_Button_Click);
             // 
             // btnShowProgress
             // 

@@ -1,4 +1,4 @@
-﻿namespace TKBR_Lib.Forms.明細検索
+﻿namespace TKBR_Lib.Forms
 {
     partial class frmMeisaiKensaku
     {

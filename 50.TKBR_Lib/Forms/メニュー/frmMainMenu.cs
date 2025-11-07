@@ -144,7 +144,10 @@ namespace TKBR_Lib.Forms
             {
                 form = new frmShiwakeStatus();
             }
-
+            else if (sender.Equals(btnLaneSetting))
+            {
+                form = new frmShiwakeToroku();
+            }
             if (form != null)
             {
                 loadScreen(form);

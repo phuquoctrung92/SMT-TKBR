@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CtrlLib;
 using CtrlLib.MyControls;
 
-namespace TKBR_Lib.Forms.明細検索
+namespace TKBR_Lib.Forms
 {
     public partial class frmMeisaiKensaku : MainForm
     {

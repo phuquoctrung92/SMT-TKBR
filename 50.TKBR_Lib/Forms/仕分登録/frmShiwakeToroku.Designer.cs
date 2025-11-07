@@ -1,4 +1,4 @@
-﻿namespace TKBR_Lib.Forms.仕分登録
+﻿namespace TKBR_Lib.Forms
 {
     partial class frmShiwakeToroku
     {
@@ -146,6 +146,7 @@
             this.btnNohinsakiKensaku.TabIndex = 135;
             this.btnNohinsakiKensaku.Text = "納品先検索";
             this.btnNohinsakiKensaku.UseVisualStyleBackColor = true;
+            this.btnNohinsakiKensaku.Click += new System.EventHandler(this.btnNohinsakiKensaku_Click);
             // 
             // lblCBMGokei
             // 
