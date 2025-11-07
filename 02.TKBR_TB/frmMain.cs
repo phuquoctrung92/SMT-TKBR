@@ -24,22 +24,19 @@ namespace TKBR_TB
         {
             try
             {
-                StringBuilder sb = new StringBuilder();
+                StringBuilder nohinSaki = new StringBuilder();
+                nohinSaki.AppendLine("ABC-MART");
+                nohinSaki.AppendLine("ABCNETMART");
+                nohinSaki.AppendLine("小山企業株式会社");
 
                 //左側レーン情報初期表示
-                pnlLane1_Info.Controls.Clear();
-                pnlLane1_Footer.Controls.Clear();
-                sb.AppendLine("ABC-MART");
-                sb.AppendLine("ABCNETMART");
-                sb.AppendLine("小山企業株式会社");
-                pnlLane1_Info.Controls.Add(new UC.ucInfo(nohinSaki: sb.ToString(), zansu: 680) { Dock = DockStyle.Fill });
-                pnlLane1_Footer.Controls.Add(new UC.ucProgress("321 / 1001") { Dock = DockStyle.Fill });
+                pnlLane1.Controls.Clear();
+                pnlLane1.Controls.Add(new UC.ucLane(nohinSaki.ToString(), 321, 1001, false) );
+
 
                 //右側レーン情報初期表示
-                pnlLane2_Info.Controls.Clear();
-                pnlLane2_Footer.Controls.Clear();
-                pnlLane2_Info.Controls.Add(new UC.ucInfo(nohinSaki: sb.ToString(), zansu: 0) { Dock = DockStyle.Fill });
-                pnlLane2_Footer.Controls.Add(new UC.ucProgress_Printing() { Dock = DockStyle.Fill });
+                pnlLane2.Controls.Clear();
+                pnlLane2.Controls.Add(new UC.ucLane(nohinSaki.ToString(), 1001, 1001, true) { Dock = DockStyle.Fill });
             }
             catch (Exception ex)
             {
