@@ -119,9 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Constants.cs" />
-    <Compile Include="Forms\メニュー\frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\メニュー\frmMenu.cs" />
     <Compile Include="Forms\メニュー\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
@@ -137,6 +135,12 @@
     <Compile Include="Forms\明細検索\frmMeisaiKensaku.Designer.cs">
       <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\納品先検索画面\frmNohinSakiSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\納品先検索画面\frmNohinSakiSearch.Designer.cs">
+      <DependentUpon>frmNohinSakiSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\メニュー\frmMenu.resx">
@@ -147,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\明細検索\frmMeisaiKensaku.resx">
       <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\納品先検索画面\frmNohinSakiSearch.resx">
+      <DependentUpon>frmNohinSakiSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
