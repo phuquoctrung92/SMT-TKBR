@@ -51,14 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeisai)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnHeader
-            // 
-            this.pnHeader.Size = new System.Drawing.Size(1534, 45);
-            // 
-            // lblScreenName
-            // 
-            this.lblScreenName.Size = new System.Drawing.Size(1534, 45);
-            // 
             // ucFunction1
             // 
             this.ucFunction1.Location = new System.Drawing.Point(0, 900);
@@ -89,7 +81,7 @@
             // dateSekisaiPicker
             // 
             this.dateSekisaiPicker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dateSekisaiPicker.Caption = null;
+            this.dateSekisaiPicker.Caption = "積載日";
             this.dateSekisaiPicker.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.dateSekisaiPicker.Location = new System.Drawing.Point(116, 76);
             this.dateSekisaiPicker.Name = "dateSekisaiPicker";

@@ -1,4 +1,4 @@
-﻿namespace TKBR_Lib.Forms.投入指示
+﻿namespace TKBR_Lib.Forms
 {
     partial class frmTonyuShiji
     {

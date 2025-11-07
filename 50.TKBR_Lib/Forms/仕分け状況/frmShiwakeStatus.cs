@@ -101,5 +101,23 @@ namespace TKBR_Lib.Forms
                 ClsMsgBox.ShowMessage(this.Text, "E999", ex);
             }
         }
+
+        private void baseButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new frmTonyuShiji();
+                this.Hide();
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ClsMsgBox.ShowMessage(Text, "E999", ex);
+            }
+            finally
+            {
+                this.Show();
+            }
+        }
     }
 }

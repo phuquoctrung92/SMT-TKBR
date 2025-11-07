@@ -85,6 +85,7 @@
             this.baseButton1.TabIndex = 81;
             this.baseButton1.Text = "投入指示";
             this.baseButton1.UseVisualStyleBackColor = true;
+            this.baseButton1.Click += new System.EventHandler(this.baseButton1_Click);
             // 
             // label1
             // 
