@@ -52,20 +52,21 @@
             this.dgvTonyuShiji.BackgroundColor = System.Drawing.Color.White;
             this.dgvTonyuShiji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTonyuShiji.DataGridColumns = null;
-            this.dgvTonyuShiji.Location = new System.Drawing.Point(12, 66);
+            this.dgvTonyuShiji.Location = new System.Drawing.Point(28, 66);
             this.dgvTonyuShiji.Name = "dgvTonyuShiji";
             this.dgvTonyuShiji.RowTemplate.Height = 21;
-            this.dgvTonyuShiji.Size = new System.Drawing.Size(1454, 730);
+            this.dgvTonyuShiji.Size = new System.Drawing.Size(1422, 746);
             this.dgvTonyuShiji.TabIndex = 15;
+            this.dgvTonyuShiji.TabStop = false;
             // 
             // btnModoru
             // 
             this.btnModoru.Caption = null;
             this.btnModoru.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnModoru.Location = new System.Drawing.Point(1315, 812);
+            this.btnModoru.Location = new System.Drawing.Point(1271, 830);
             this.btnModoru.Name = "btnModoru";
-            this.btnModoru.Size = new System.Drawing.Size(152, 49);
-            this.btnModoru.TabIndex = 116;
+            this.btnModoru.Size = new System.Drawing.Size(180, 60);
+            this.btnModoru.TabIndex = 16;
             this.btnModoru.Text = "戻る";
             this.btnModoru.UseVisualStyleBackColor = true;
             this.btnModoru.Click += new System.EventHandler(this.btnModoru_Click);

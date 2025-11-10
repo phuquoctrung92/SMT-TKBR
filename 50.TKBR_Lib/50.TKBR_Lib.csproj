@@ -119,7 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Constants.cs" />
-	<Compile Include="Forms\メニュー\frmMainMenu.cs">
+    <Compile Include="Forms\メニュー\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\メニュー\frmMainMenu.Designer.cs">
@@ -149,10 +149,10 @@
     <Compile Include="Forms\明細検索\frmMeisaiKensaku.Designer.cs">
       <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\納品先検索画面\frmNohinSakiSearch.cs">
+    <Compile Include="Forms\納品先検索\frmNohinSakiSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\納品先検索画面\frmNohinSakiSearch.Designer.cs">
+    <Compile Include="Forms\納品先検索\frmNohinSakiSearch.Designer.cs">
       <DependentUpon>frmNohinSakiSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -172,7 +172,7 @@
     <EmbeddedResource Include="Forms\明細検索\frmMeisaiKensaku.resx">
       <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\納品先検索画面\frmNohinSakiSearch.resx">
+    <EmbeddedResource Include="Forms\納品先検索\frmNohinSakiSearch.resx">
       <DependentUpon>frmNohinSakiSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

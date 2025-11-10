@@ -17,6 +17,8 @@ namespace TKBR_Lib.Forms
         #region Constructor
         private List<TorokuNohinsakiModel> lstNohinsaki;
         private List<TorokuMeisaiModel> lstMeisai;
+        private int dgvNohinsakiWidth;
+        private int dgvMeisaiWidth;
         public frmShiwakeToroku()
         {
             InitializeComponent();
@@ -28,6 +30,9 @@ namespace TKBR_Lib.Forms
         public override void formLoad(object sender, EventArgs e)
         {
             base.formLoad(sender, e);
+
+            dgvMeisaiWidth = dgvMeisai.Size.Width;
+            dgvNohinsakiWidth = dgvNohinsaki.Size.Width;
 
             LoadLaneCombobox();
 
@@ -58,7 +63,6 @@ namespace TKBR_Lib.Forms
                 this.Show();
             }
         }
-
         private void btnNohinsakiKensaku_Click(object sender, EventArgs e)
         {
             try
@@ -77,18 +81,19 @@ namespace TKBR_Lib.Forms
             }
             
         }
-
-        private void dgvMeisai_DataSourceChanged(object sender, EventArgs e)
-        {
-            lblKosuGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分個数"].Value?.ToString(), out double v) ? v : 0).ToString("N0");
-            lblCBMGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分CBM"].Value?.ToString(), out double v) ? v : 0).ToString("N2");
-        }
         private void dgvMeisai_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var rowEdit = dgvMeisai.Rows[e.RowIndex];
-            rowEdit.Cells[7].Value = (double.Parse(rowEdit.Cells[5].Value.ToString()) / double.Parse(rowEdit.Cells[4].Value.ToString()) * double.Parse(rowEdit.Cells[6].Value.ToString())).ToString("N2");
-            lblKosuGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分個数"].Value?.ToString(), out double v) ? v : 0).ToString("N0");
-            lblCBMGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分CBM"].Value?.ToString(), out double v) ? v : 0).ToString("N2");
+            var mifuriwake_kosu = double.Parse(rowEdit.Cells["未振分個数"].Value.ToString());
+            //空欄チェック
+            var editValue = double.TryParse(rowEdit.Cells["仕分個数"].Value?.ToString(), out double v) ? v : 0;
+            //適切チェック（未振分個数を従う）
+            editValue = editValue > mifuriwake_kosu ? mifuriwake_kosu : editValue;
+            //仕分個数と仕分CBMの値をアップデート
+            rowEdit.Cells["仕分個数"].Value = editValue.ToString();
+            rowEdit.Cells["仕分CBM"].Value = (double.Parse(rowEdit.Cells["未振分CBM"].Value.ToString()) / mifuriwake_kosu * editValue).ToString("N2");
+            lblKosuGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分個数"].Value?.ToString(), out double v1) ? v1 : 0).ToString("N0");
+            lblCBMGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分CBM"].Value?.ToString(), out double v2) ? v2 : 0).ToString("N2");
         }
         private void dgvMeisai_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -109,6 +114,16 @@ namespace TKBR_Lib.Forms
                 e.Handled = true;
             }
         }
+        private void dgvNohinsaki_DataSourceChanged(object sender, EventArgs e)
+        {
+            dgvNohinsaki.Size = new Size(dgvNohinsaki.DisplayedRowCount(false) < dgvNohinsaki.RowCount ? dgvNohinsakiWidth + 17 : dgvNohinsakiWidth, dgvNohinsaki.Size.Height);
+        }
+        private void dgvMeisai_DataSourceChanged(object sender, EventArgs e)
+        {
+            dgvMeisai.Size = new Size(dgvMeisai.DisplayedRowCount(false) < dgvMeisai.RowCount ? dgvMeisaiWidth + 17 : dgvMeisaiWidth, dgvMeisai.Size.Height);
+            lblKosuGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分個数"].Value?.ToString(), out double v) ? v : 0).ToString("N0");
+            lblCBMGokei.Text = dgvMeisai.Rows.Cast<DataGridViewRow>().Sum(r => double.TryParse(r.Cells["仕分CBM"].Value?.ToString(), out double v) ? v : 0).ToString("N2");
+        }
         #endregion
 
         #region Methods
@@ -116,15 +131,20 @@ namespace TKBR_Lib.Forms
         {
             cbbRen.Clear();
             cbbRen.AddItem("", "");
-            cbbRen.AddItem("    1", "1");
-            cbbRen.AddItem("    2", "2");
-            cbbRen.AddItem("    3", "3");
-            cbbRen.AddItem("    4", "4");
-            cbbRen.AddItem("    5", "5");
+            cbbRen.AddItem("  1", "1");
+            cbbRen.AddItem("  2", "2");
+            cbbRen.AddItem("  3", "3");
+            cbbRen.AddItem("  4", "4");
+            cbbRen.AddItem("  5", "5");
+            cbbRen.SelectedValue = "3";
         }
         private void LoadData()
         {
             lstNohinsaki = new List<TorokuNohinsakiModel>();
+            lstNohinsaki.Add(new TorokuNohinsakiModel("ABC-MART", "埼玉県", "草加市吉町４－１０－４５Ｎｅｔ－ＭＡＲＴ準備倉庫", "460", "29.30"));
+            lstNohinsaki.Add(new TorokuNohinsakiModel("ABCNETMART／小山企業株式会社", "埼玉県", "草加市青柳１－５－３５草加第３センター", "6231", "362.85"));
+            lstNohinsaki.Add(new TorokuNohinsakiModel("ABC-MART", "埼玉県", "草加市吉町４－１０－４５Ｎｅｔ－ＭＡＲＴ準備倉庫", "460", "29.30"));
+            lstNohinsaki.Add(new TorokuNohinsakiModel("ABCNETMART／小山企業株式会社", "埼玉県", "草加市青柳１－５－３５草加第３センター", "6231", "362.85"));
             lstNohinsaki.Add(new TorokuNohinsakiModel("ABC-MART", "埼玉県", "草加市吉町４－１０－４５Ｎｅｔ－ＭＡＲＴ準備倉庫", "460", "29.30"));
             lstNohinsaki.Add(new TorokuNohinsakiModel("ABCNETMART／小山企業株式会社", "埼玉県", "草加市青柳１－５－３５草加第３センター", "6231", "362.85"));
 
@@ -140,22 +160,9 @@ namespace TKBR_Lib.Forms
         }
         private void LoadDGVNohinSaki()
         {
-            dgvNohinsaki.RowHeadersVisible = false;
-            dgvNohinsaki.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvNohinsaki.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvNohinsaki.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvNohinsaki.ReadOnly = true;
-            dgvNohinsaki.AllowUserToAddRows = false;
-            dgvNohinsaki.AllowUserToDeleteRows = false;
-            dgvNohinsaki.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 242, 204);
-            dgvNohinsaki.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvNohinsaki.DefaultCellStyle.Font = new Font("MS Gothic", 14);
-            dgvNohinsaki.ColumnHeadersDefaultCellStyle.Font = new Font("MS Gothic", 14);
-            dgvNohinsaki.RowTemplate.Height = 35;
-
+            DatagridviewUICustom(dgvNohinsaki);
             DataTable dt = new DataTable();
-
-            dt.Columns.Add("No.", typeof(string));
+            dt.Columns.Add("No.", typeof(int));
             dt.Columns.Add("納品先名", typeof(string));
             dt.Columns.Add("都道府県", typeof(string));
             dt.Columns.Add("住所", typeof(string));
@@ -170,15 +177,14 @@ namespace TKBR_Lib.Forms
             }
             dgvNohinsaki.DataSource = dt;
 
-            dgvNohinsaki.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvNohinsaki.Columns[0].Width = 60;
+            dgvNohinsaki.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvNohinsaki.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvNohinsaki.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvNohinsaki.Columns[1].Width = 350;
+            dgvNohinsaki.Columns[1].Width = 370;
 
             dgvNohinsaki.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvNohinsaki.Columns[2].Width = 150;
+            dgvNohinsaki.Columns[2].Width = 130;
             dgvNohinsaki.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvNohinsaki.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -191,21 +197,9 @@ namespace TKBR_Lib.Forms
         }
         private void LoadDGVMeisai()
         {
-            dgvMeisai.RowHeadersVisible = false;
-            dgvMeisai.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvMeisai.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvMeisai.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMeisai.AllowUserToAddRows = false;
-            dgvMeisai.AllowUserToDeleteRows = false;
-            dgvMeisai.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 242, 204);
-            dgvMeisai.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvMeisai.DefaultCellStyle.Font = new Font("MS Gothic", 14);
-            dgvMeisai.ColumnHeadersDefaultCellStyle.Font = new Font("MS Gothic", 14);
-            dgvMeisai.RowTemplate.Height = 35;
-
+            DatagridviewUICustom(dgvMeisai);
             DataTable dt = new DataTable();
-
-            dt.Columns.Add("No.", typeof(string));
+            dt.Columns.Add("No.", typeof(int));
             dt.Columns.Add("納品先名", typeof(string));
             dt.Columns.Add("Packlist", typeof(string));
             dt.Columns.Add("問い合わせ番号", typeof(string));
@@ -230,12 +224,11 @@ namespace TKBR_Lib.Forms
             dgvMeisai.Columns[6].ReadOnly = false;
             dgvMeisai.Columns[6].DefaultCellStyle.BackColor = Color.FromArgb(255, 242, 204);
 
-            dgvMeisai.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvMeisai.Columns[0].Width = 60;
+            dgvMeisai.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvMeisai.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvMeisai.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvMeisai.Columns[2].Width = 150;
+            dgvMeisai.Columns[2].Width = 160;
             dgvMeisai.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvMeisai.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -256,6 +249,23 @@ namespace TKBR_Lib.Forms
             dgvMeisai.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dgvMeisai.Columns[7].Width = 150;
             dgvMeisai.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
+        private void DatagridviewUICustom(CtrlLib.MyControls.DataGridView datagridview)
+        {
+            datagridview.RowHeadersVisible = false;
+            datagridview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            datagridview.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            datagridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            datagridview.AllowUserToAddRows = false;
+            datagridview.AllowUserToDeleteRows = false;
+            datagridview.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 242, 204);
+            datagridview.DefaultCellStyle.SelectionForeColor = Color.Black;
+            datagridview.DefaultCellStyle.Font = new Font("MS Gothic", 18);
+            datagridview.ColumnHeadersDefaultCellStyle.Font = new Font("MS Gothic", 18);
+            datagridview.RowTemplate.Height = 50;
+            datagridview.ColumnHeadersHeight = 50;
+            datagridview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            datagridview.AllowUserToResizeRows = false;
         }
         #endregion
     }

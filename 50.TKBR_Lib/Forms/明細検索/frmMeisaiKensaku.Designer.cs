@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new CtrlLib.MyControls.Label();
-            this.label2 = new CtrlLib.MyControls.Label();
             this.label3 = new CtrlLib.MyControls.Label();
             this.label5 = new CtrlLib.MyControls.Label();
             this.dgvNohinsaki = new CtrlLib.MyControls.DataGridView();
@@ -38,8 +37,6 @@
             this.label6 = new CtrlLib.MyControls.Label();
             this.btnMeisaiSelectAll = new CtrlLib.MyControls.BaseButton();
             this.btnMeisaiKaijoAll = new CtrlLib.MyControls.BaseButton();
-            this.btnModoru = new CtrlLib.MyControls.BaseButton();
-            this.btnToroku = new CtrlLib.MyControls.BaseButton();
             this.lblSekisaiDate = new CtrlLib.MyControls.Label();
             this.label4 = new CtrlLib.MyControls.Label();
             this.label7 = new CtrlLib.MyControls.Label();
@@ -50,20 +47,13 @@
             this.label15 = new CtrlLib.MyControls.Label();
             this.lblMeisaisu = new CtrlLib.MyControls.Label();
             this.label12 = new CtrlLib.MyControls.Label();
-            this.label8 = new CtrlLib.MyControls.Label();
             this.lblRen = new CtrlLib.MyControls.Label();
+            this.baseButton1 = new CtrlLib.MyControls.BaseButton();
+            this.baseButton2 = new CtrlLib.MyControls.BaseButton();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNohinsaki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeisai)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnHeader
-            // 
-            this.pnHeader.Size = new System.Drawing.Size(1534, 45);
-            // 
-            // lblScreenName
-            // 
-            this.lblScreenName.Size = new System.Drawing.Size(1534, 45);
             // 
             // ucFunction1
             // 
@@ -75,27 +65,18 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label1.Location = new System.Drawing.Point(12, 80);
+            this.label1.Location = new System.Drawing.Point(28, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 24);
             this.label1.TabIndex = 9;
             this.label1.Text = "積載日";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label2.Location = new System.Drawing.Point(116, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 35);
-            this.label2.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label3.Location = new System.Drawing.Point(344, 80);
+            this.label3.Location = new System.Drawing.Point(359, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 24);
             this.label3.TabIndex = 11;
@@ -106,7 +87,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label5.Location = new System.Drawing.Point(12, 138);
+            this.label5.Location = new System.Drawing.Point(28, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 13;
@@ -117,21 +98,24 @@
             this.dgvNohinsaki.BackgroundColor = System.Drawing.Color.White;
             this.dgvNohinsaki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNohinsaki.DataGridColumns = null;
-            this.dgvNohinsaki.Location = new System.Drawing.Point(12, 165);
+            this.dgvNohinsaki.Location = new System.Drawing.Point(28, 150);
             this.dgvNohinsaki.Name = "dgvNohinsaki";
+            this.dgvNohinsaki.ReadOnly = true;
             this.dgvNohinsaki.RowTemplate.Height = 21;
-            this.dgvNohinsaki.Size = new System.Drawing.Size(1510, 181);
+            this.dgvNohinsaki.Size = new System.Drawing.Size(1478, 196);
             this.dgvNohinsaki.TabIndex = 14;
+            this.dgvNohinsaki.TabStop = false;
+            this.dgvNohinsaki.DataSourceChanged += new System.EventHandler(this.dgvNohinsaki_DataSourceChanged);
             this.dgvNohinsaki.SelectionChanged += new System.EventHandler(this.dgvNohinsaki_SelectionChanged);
             // 
             // btnNohinsakiSelectAll
             // 
             this.btnNohinsakiSelectAll.Caption = null;
             this.btnNohinsakiSelectAll.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnNohinsakiSelectAll.Location = new System.Drawing.Point(1371, 119);
+            this.btnNohinsakiSelectAll.Location = new System.Drawing.Point(1355, 104);
             this.btnNohinsakiSelectAll.Name = "btnNohinsakiSelectAll";
             this.btnNohinsakiSelectAll.Size = new System.Drawing.Size(152, 40);
-            this.btnNohinsakiSelectAll.TabIndex = 110;
+            this.btnNohinsakiSelectAll.TabIndex = 0;
             this.btnNohinsakiSelectAll.Text = "全て表示";
             this.btnNohinsakiSelectAll.UseVisualStyleBackColor = true;
             this.btnNohinsakiSelectAll.Click += new System.EventHandler(this.btnNohinsakiSelectAll_Click);
@@ -141,11 +125,14 @@
             this.dgvMeisai.BackgroundColor = System.Drawing.Color.White;
             this.dgvMeisai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMeisai.DataGridColumns = null;
-            this.dgvMeisai.Location = new System.Drawing.Point(12, 434);
+            this.dgvMeisai.Location = new System.Drawing.Point(28, 434);
             this.dgvMeisai.Name = "dgvMeisai";
+            this.dgvMeisai.ReadOnly = true;
             this.dgvMeisai.RowTemplate.Height = 21;
-            this.dgvMeisai.Size = new System.Drawing.Size(1510, 372);
+            this.dgvMeisai.Size = new System.Drawing.Size(1478, 380);
             this.dgvMeisai.TabIndex = 112;
+            this.dgvMeisai.TabStop = false;
+            this.dgvMeisai.DataSourceChanged += new System.EventHandler(this.dgvMeisai_DataSourceChanged);
             this.dgvMeisai.SelectionChanged += new System.EventHandler(this.dgvMeisai_SelectionChanged);
             // 
             // label6
@@ -153,7 +140,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label6.Location = new System.Drawing.Point(12, 407);
+            this.label6.Location = new System.Drawing.Point(28, 407);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 24);
             this.label6.TabIndex = 111;
@@ -163,10 +150,10 @@
             // 
             this.btnMeisaiSelectAll.Caption = null;
             this.btnMeisaiSelectAll.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnMeisaiSelectAll.Location = new System.Drawing.Point(115, 388);
+            this.btnMeisaiSelectAll.Location = new System.Drawing.Point(131, 388);
             this.btnMeisaiSelectAll.Name = "btnMeisaiSelectAll";
             this.btnMeisaiSelectAll.Size = new System.Drawing.Size(152, 40);
-            this.btnMeisaiSelectAll.TabIndex = 113;
+            this.btnMeisaiSelectAll.TabIndex = 1;
             this.btnMeisaiSelectAll.Text = "全て選択";
             this.btnMeisaiSelectAll.UseVisualStyleBackColor = true;
             this.btnMeisaiSelectAll.Click += new System.EventHandler(this.btnMeisaiSelectAll_Click);
@@ -175,42 +162,20 @@
             // 
             this.btnMeisaiKaijoAll.Caption = null;
             this.btnMeisaiKaijoAll.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnMeisaiKaijoAll.Location = new System.Drawing.Point(273, 388);
+            this.btnMeisaiKaijoAll.Location = new System.Drawing.Point(289, 388);
             this.btnMeisaiKaijoAll.Name = "btnMeisaiKaijoAll";
             this.btnMeisaiKaijoAll.Size = new System.Drawing.Size(152, 40);
-            this.btnMeisaiKaijoAll.TabIndex = 114;
+            this.btnMeisaiKaijoAll.TabIndex = 2;
             this.btnMeisaiKaijoAll.Text = "全て解除";
             this.btnMeisaiKaijoAll.UseVisualStyleBackColor = true;
             this.btnMeisaiKaijoAll.Click += new System.EventHandler(this.btnMeisaiKaijoAll_Click);
             // 
-            // btnModoru
-            // 
-            this.btnModoru.Caption = null;
-            this.btnModoru.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnModoru.Location = new System.Drawing.Point(1371, 821);
-            this.btnModoru.Name = "btnModoru";
-            this.btnModoru.Size = new System.Drawing.Size(152, 49);
-            this.btnModoru.TabIndex = 115;
-            this.btnModoru.Text = "戻る";
-            this.btnModoru.UseVisualStyleBackColor = true;
-            this.btnModoru.Click += new System.EventHandler(this.btnModoru_Click);
-            // 
-            // btnToroku
-            // 
-            this.btnToroku.Caption = null;
-            this.btnToroku.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnToroku.Location = new System.Drawing.Point(1213, 821);
-            this.btnToroku.Name = "btnToroku";
-            this.btnToroku.Size = new System.Drawing.Size(152, 49);
-            this.btnToroku.TabIndex = 116;
-            this.btnToroku.Text = "登録";
-            this.btnToroku.UseVisualStyleBackColor = true;
-            // 
             // lblSekisaiDate
             // 
             this.lblSekisaiDate.BackColor = System.Drawing.Color.Yellow;
+            this.lblSekisaiDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSekisaiDate.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.lblSekisaiDate.Location = new System.Drawing.Point(117, 77);
+            this.lblSekisaiDate.Location = new System.Drawing.Point(132, 62);
             this.lblSekisaiDate.Name = "lblSekisaiDate";
             this.lblSekisaiDate.Size = new System.Drawing.Size(153, 33);
             this.lblSekisaiDate.TabIndex = 117;
@@ -222,7 +187,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label4.Location = new System.Drawing.Point(1109, 370);
+            this.label4.Location = new System.Drawing.Point(1093, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 24);
             this.label4.TabIndex = 120;
@@ -233,7 +198,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label7.Location = new System.Drawing.Point(1247, 370);
+            this.label7.Location = new System.Drawing.Point(1231, 370);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 24);
             this.label7.TabIndex = 121;
@@ -244,7 +209,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label9.Location = new System.Drawing.Point(1400, 370);
+            this.label9.Location = new System.Drawing.Point(1384, 370);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 24);
             this.label9.TabIndex = 122;
@@ -254,7 +219,7 @@
             // 
             this.lblKosuGokei.BackColor = System.Drawing.Color.White;
             this.lblKosuGokei.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.lblKosuGokei.Location = new System.Drawing.Point(1221, 401);
+            this.lblKosuGokei.Location = new System.Drawing.Point(1205, 401);
             this.lblKosuGokei.Name = "lblKosuGokei";
             this.lblKosuGokei.Size = new System.Drawing.Size(149, 33);
             this.lblKosuGokei.TabIndex = 126;
@@ -265,7 +230,7 @@
             // 
             this.label13.BackColor = System.Drawing.Color.Black;
             this.label13.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label13.Location = new System.Drawing.Point(1220, 400);
+            this.label13.Location = new System.Drawing.Point(1204, 400);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 34);
             this.label13.TabIndex = 125;
@@ -274,7 +239,7 @@
             // 
             this.lblCBMGokei.BackColor = System.Drawing.Color.White;
             this.lblCBMGokei.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.lblCBMGokei.Location = new System.Drawing.Point(1371, 401);
+            this.lblCBMGokei.Location = new System.Drawing.Point(1355, 401);
             this.lblCBMGokei.Name = "lblCBMGokei";
             this.lblCBMGokei.Size = new System.Drawing.Size(150, 33);
             this.lblCBMGokei.TabIndex = 128;
@@ -285,7 +250,7 @@
             // 
             this.label15.BackColor = System.Drawing.Color.Black;
             this.label15.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label15.Location = new System.Drawing.Point(1370, 400);
+            this.label15.Location = new System.Drawing.Point(1354, 400);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(152, 34);
             this.label15.TabIndex = 127;
@@ -294,7 +259,7 @@
             // 
             this.lblMeisaisu.BackColor = System.Drawing.Color.White;
             this.lblMeisaisu.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.lblMeisaisu.Location = new System.Drawing.Point(1071, 401);
+            this.lblMeisaisu.Location = new System.Drawing.Point(1055, 401);
             this.lblMeisaisu.Name = "lblMeisaisu";
             this.lblMeisaisu.Size = new System.Drawing.Size(149, 33);
             this.lblMeisaisu.TabIndex = 130;
@@ -305,36 +270,53 @@
             // 
             this.label12.BackColor = System.Drawing.Color.Black;
             this.label12.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label12.Location = new System.Drawing.Point(1070, 400);
+            this.label12.Location = new System.Drawing.Point(1054, 400);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(150, 34);
             this.label12.TabIndex = 129;
             // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label8.Location = new System.Drawing.Point(451, 76);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 35);
-            this.label8.TabIndex = 118;
-            // 
             // lblRen
             // 
             this.lblRen.BackColor = System.Drawing.Color.Yellow;
+            this.lblRen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRen.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.lblRen.Location = new System.Drawing.Point(452, 77);
+            this.lblRen.Location = new System.Drawing.Point(467, 62);
             this.lblRen.Name = "lblRen";
-            this.lblRen.Size = new System.Drawing.Size(153, 33);
+            this.lblRen.Size = new System.Drawing.Size(86, 33);
             this.lblRen.TabIndex = 119;
             this.lblRen.Text = "3";
             this.lblRen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // baseButton1
+            // 
+            this.baseButton1.Caption = null;
+            this.baseButton1.Font = new System.Drawing.Font("MS Gothic", 18F);
+            this.baseButton1.Location = new System.Drawing.Point(1141, 832);
+            this.baseButton1.Name = "baseButton1";
+            this.baseButton1.Size = new System.Drawing.Size(180, 60);
+            this.baseButton1.TabIndex = 3;
+            this.baseButton1.Text = "登録";
+            this.baseButton1.UseVisualStyleBackColor = true;
+            // 
+            // baseButton2
+            // 
+            this.baseButton2.Caption = null;
+            this.baseButton2.Font = new System.Drawing.Font("MS Gothic", 18F);
+            this.baseButton2.Location = new System.Drawing.Point(1327, 832);
+            this.baseButton2.Name = "baseButton2";
+            this.baseButton2.Size = new System.Drawing.Size(180, 60);
+            this.baseButton2.TabIndex = 4;
+            this.baseButton2.Text = "戻る";
+            this.baseButton2.UseVisualStyleBackColor = true;
+            this.baseButton2.Click += new System.EventHandler(this.btnModoru_Click);
             // 
             // frmMeisaiKensaku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1534, 923);
+            this.Controls.Add(this.baseButton1);
+            this.Controls.Add(this.baseButton2);
             this.Controls.Add(this.lblMeisaisu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblCBMGokei);
@@ -345,10 +327,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblRen);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblSekisaiDate);
-            this.Controls.Add(this.btnToroku);
-            this.Controls.Add(this.btnModoru);
             this.Controls.Add(this.btnMeisaiKaijoAll);
             this.Controls.Add(this.btnMeisaiSelectAll);
             this.Controls.Add(this.dgvMeisai);
@@ -357,13 +336,11 @@
             this.Controls.Add(this.dgvNohinsaki);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmMeisaiKensaku";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMeisaiKensaku";
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.dgvNohinsaki, 0);
@@ -372,10 +349,7 @@
             this.Controls.SetChildIndex(this.dgvMeisai, 0);
             this.Controls.SetChildIndex(this.btnMeisaiSelectAll, 0);
             this.Controls.SetChildIndex(this.btnMeisaiKaijoAll, 0);
-            this.Controls.SetChildIndex(this.btnModoru, 0);
-            this.Controls.SetChildIndex(this.btnToroku, 0);
             this.Controls.SetChildIndex(this.lblSekisaiDate, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.lblRen, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label7, 0);
@@ -388,6 +362,8 @@
             this.Controls.SetChildIndex(this.lblMeisaisu, 0);
             this.Controls.SetChildIndex(this.pnHeader, 0);
             this.Controls.SetChildIndex(this.ucFunction1, 0);
+            this.Controls.SetChildIndex(this.baseButton2, 0);
+            this.Controls.SetChildIndex(this.baseButton1, 0);
             this.pnHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNohinsaki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeisai)).EndInit();
@@ -399,7 +375,6 @@
         #endregion
 
         private CtrlLib.MyControls.Label label1;
-        private CtrlLib.MyControls.Label label2;
         private CtrlLib.MyControls.Label label3;
         private CtrlLib.MyControls.Label label5;
         private CtrlLib.MyControls.DataGridView dgvNohinsaki;
@@ -408,8 +383,6 @@
         private CtrlLib.MyControls.Label label6;
         private CtrlLib.MyControls.BaseButton btnMeisaiSelectAll;
         private CtrlLib.MyControls.BaseButton btnMeisaiKaijoAll;
-        private CtrlLib.MyControls.BaseButton btnModoru;
-        private CtrlLib.MyControls.BaseButton btnToroku;
         private CtrlLib.MyControls.Label lblSekisaiDate;
         private CtrlLib.MyControls.Label label4;
         private CtrlLib.MyControls.Label label7;
@@ -420,7 +393,8 @@
         private CtrlLib.MyControls.Label label15;
         private CtrlLib.MyControls.Label lblMeisaisu;
         private CtrlLib.MyControls.Label label12;
-        private CtrlLib.MyControls.Label label8;
         private CtrlLib.MyControls.Label lblRen;
+        private CtrlLib.MyControls.BaseButton baseButton1;
+        private CtrlLib.MyControls.BaseButton baseButton2;
     }
 }

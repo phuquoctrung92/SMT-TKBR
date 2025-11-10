@@ -53,27 +53,27 @@ namespace TKBR_Lib.Forms
         {
             dgvTonyuShiji.RowTemplate.Height = 35;
             dgvTonyuShiji.RowHeadersVisible = false;
-
             dgvTonyuShiji.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTonyuShiji.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvTonyuShiji.ColumnHeadersDefaultCellStyle.Font = new Font("MS Gothic", 14);
             dgvTonyuShiji.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(189, 215, 238);
             dgvTonyuShiji.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            dgvTonyuShiji.ColumnHeadersHeight = 35;
-            dgvTonyuShiji.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvTonyuShiji.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvTonyuShiji.ColumnHeadersDefaultCellStyle.BackColor;
-
             dgvTonyuShiji.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTonyuShiji.ReadOnly = true;
             dgvTonyuShiji.AllowUserToAddRows = false;
             dgvTonyuShiji.AllowUserToDeleteRows = false;
             dgvTonyuShiji.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 242, 204);
             dgvTonyuShiji.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvTonyuShiji.DefaultCellStyle.Font = new Font("MS Gothic", 14);
-            dgvTonyuShiji.EnableHeadersVisualStyles = false;            
+            dgvTonyuShiji.EnableHeadersVisualStyles = false;
             dgvTonyuShiji.AllowUserToResizeRows = false;
             dgvTonyuShiji.EnableHeadersVisualStyles = false;
-            
+            dgvTonyuShiji.DefaultCellStyle.Font = new Font("MS Gothic", 18);
+            dgvTonyuShiji.ColumnHeadersDefaultCellStyle.Font = new Font("MS Gothic", 18);
+            dgvTonyuShiji.RowTemplate.Height = 50;
+            dgvTonyuShiji.ColumnHeadersHeight = 50;
+            dgvTonyuShiji.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvTonyuShiji.AllowUserToResizeRows = false;
+
 
             DataTable dt = new DataTable();
 
