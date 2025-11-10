@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new CtrlLib.MyControls.Label();
             this.label2 = new CtrlLib.MyControls.Label();
-            this.label3 = new CtrlLib.MyControls.Label();
+            this.lblDatetime = new CtrlLib.MyControls.Label();
             this.label4 = new CtrlLib.MyControls.Label();
             this.label5 = new CtrlLib.MyControls.Label();
             this.label6 = new CtrlLib.MyControls.Label();
@@ -50,6 +50,14 @@
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnHeader
+            // 
+            this.pnHeader.Size = new System.Drawing.Size(1478, 45);
+            // 
+            // lblScreenName
+            // 
+            this.lblScreenName.Size = new System.Drawing.Size(1478, 45);
             // 
             // ucFunction1
             // 
@@ -70,22 +78,22 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(116, 93);
+            this.label2.Location = new System.Drawing.Point(117, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 35);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             // 
-            // label3
+            // lblDatetime
             // 
-            this.label3.BackColor = System.Drawing.Color.Yellow;
-            this.label3.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(117, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 33);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "2025/08/29";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDatetime.BackColor = System.Drawing.Color.Yellow;
+            this.lblDatetime.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDatetime.Location = new System.Drawing.Point(118, 95);
+            this.lblDatetime.Name = "lblDatetime";
+            this.lblDatetime.Size = new System.Drawing.Size(153, 33);
+            this.lblDatetime.TabIndex = 11;
+            this.lblDatetime.Text = "2025/08/29";
+            this.lblDatetime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -112,7 +120,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(357, 99);
+            this.label6.Location = new System.Drawing.Point(357, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 24);
             this.label6.TabIndex = 12;
@@ -195,7 +203,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -205,7 +213,7 @@
             this.dataGridView1.DataGridColumns = null;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -239,7 +247,6 @@
             this.btnSentaku.TabIndex = 25;
             this.btnSentaku.Text = "選択";
             this.btnSentaku.UseVisualStyleBackColor = false;
-            this.btnSentaku.Click += new System.EventHandler(this.btnSentaku_Click);
             // 
             // btnModoru
             // 
@@ -280,7 +287,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblDatetime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmNohinSakiSearch";
@@ -289,7 +296,7 @@
             this.Load += new System.EventHandler(this.frmNohinSakiSearch_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.lblDatetime, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label4, 0);
@@ -315,7 +322,7 @@
 
         private CtrlLib.MyControls.Label label1;
         private CtrlLib.MyControls.Label label2;
-        private CtrlLib.MyControls.Label label3;
+        private CtrlLib.MyControls.Label lblDatetime;
         private CtrlLib.MyControls.Label label4;
         private CtrlLib.MyControls.Label label5;
         private CtrlLib.MyControls.Label label6;

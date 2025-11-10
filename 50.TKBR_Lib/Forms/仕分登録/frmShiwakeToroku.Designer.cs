@@ -51,14 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeisai)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnHeader
-            // 
-            this.pnHeader.Size = new System.Drawing.Size(1534, 45);
-            // 
-            // lblScreenName
-            // 
-            this.lblScreenName.Size = new System.Drawing.Size(1534, 45);
-            // 
             // ucFunction1
             // 
             this.ucFunction1.Location = new System.Drawing.Point(0, 900);

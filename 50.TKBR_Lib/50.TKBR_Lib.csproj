@@ -119,9 +119,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Constants.cs" />
-    <Compile Include="Forms\メニュー\frmMenu.cs" />
+    <Compile Include="Forms\メニュー\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\メニュー\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\仕分け状況照会\frmShiwakeJokyoShokai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\仕分け状況照会\frmShiwakeJokyoShokai.Designer.cs">
+      <DependentUpon>frmShiwakeJokyoShokai.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\仕分登録\frmShiwakeToroku.cs">
       <SubType>Form</SubType>
@@ -129,10 +137,28 @@
     <Compile Include="Forms\仕分登録\frmShiwakeToroku.Designer.cs">
       <DependentUpon>frmShiwakeToroku.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\仕分登録_Ngoc\frmShiwakeToroku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\仕分登録_Ngoc\frmShiwakeToroku.Designer.cs">
+      <DependentUpon>frmShiwakeToroku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\投入指示\frmTonyuShiji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\投入指示\frmTonyuShiji.Designer.cs">
+      <DependentUpon>frmTonyuShiji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\明細検索\frmMeisaiKensaku.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\明細検索\frmMeisaiKensaku.Designer.cs">
+      <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\明細検索_Ngoc\frmMeisaiKensaku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\明細検索_Ngoc\frmMeisaiKensaku.Designer.cs">
       <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\納品先検索画面\frmNohinSakiSearch.cs">
@@ -146,10 +172,22 @@
     <EmbeddedResource Include="Forms\メニュー\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\仕分け状況照会\frmShiwakeJokyoShokai.resx">
+      <DependentUpon>frmShiwakeJokyoShokai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\仕分登録\frmShiwakeToroku.resx">
       <DependentUpon>frmShiwakeToroku.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\仕分登録_Ngoc\frmShiwakeToroku.resx">
+      <DependentUpon>frmShiwakeToroku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\投入指示\frmTonyuShiji.resx">
+      <DependentUpon>frmTonyuShiji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\明細検索\frmMeisaiKensaku.resx">
+      <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\明細検索_Ngoc\frmMeisaiKensaku.resx">
       <DependentUpon>frmMeisaiKensaku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\納品先検索画面\frmNohinSakiSearch.resx">
@@ -193,5 +231,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

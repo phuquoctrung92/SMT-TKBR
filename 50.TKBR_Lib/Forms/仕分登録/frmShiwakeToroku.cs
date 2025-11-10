@@ -44,7 +44,7 @@ namespace TKBR_Lib.Forms.仕分登録
         }
         private void btnMeisaiKensaku_Click(object sender, EventArgs e)
         {
-            var frm = new frmMeisaiKensaku();
+            var frm = new 明細検索.frmMeisaiKensaku();
             frm.ShowDialog();
         }
         private void dgvMeisai_DataSourceChanged(object sender, EventArgs e)

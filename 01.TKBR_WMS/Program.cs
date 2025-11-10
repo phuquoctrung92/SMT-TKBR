@@ -7,6 +7,8 @@ using SmtLib.DataBaseObjects;
 using TKBR_Lib.Forms;
 using TKBR_Lib.Classes;
 
+using TKBR_Lib;
+
 namespace TKBR_WMS
 {
     public static class Program
@@ -33,7 +35,7 @@ namespace TKBR_WMS
             {
                 XmlMessageLib.SetXmlMessage();
                 SQLServer.Instance.UpdateConnectionString(clsCommon.ConnectionString());
-                 var frmMain = new frmMainMenu();
+                 var frmMain = new frmShiwakeToroku();
                 Application.Run(frmMain);
             }
             catch(Exception ex)

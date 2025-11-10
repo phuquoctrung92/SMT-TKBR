@@ -5,11 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace TKBR_Lib.Forms
 {
@@ -17,11 +19,11 @@ namespace TKBR_Lib.Forms
     {
         private BindingSource bs = new BindingSource();
 
-        public frmNohinSakiSearch()
+        public frmNohinSakiSearch(DateTime time)
         {
             InitializeComponent();
             Initialize("CL", "納品先検索画面");
-
+            lblDatetime.Text = time.ToString("yyyy/MM/dd HH:mm:ss");
         }
         //public class Test
         //{
@@ -112,6 +114,24 @@ namespace TKBR_Lib.Forms
             dataGridView1.Columns[3].HeaderText = "都道府県";
             dataGridView1.Columns[4].HeaderText = "住所";
 
+            dataGridView1.Columns[0].Width = 72; // No。
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+            dataGridView1.Columns[1].Width = 160; // 納品先コード
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+            dataGridView1.Columns[2].Width = 400; // 納品先名
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+            dataGridView1.Columns[3].Width = 150; // 都道府県
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // 住所
+
+
+
+
+
             dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             
@@ -128,14 +148,7 @@ namespace TKBR_Lib.Forms
                 row.Height = 35;
             }
 
-            dataGridView1.Columns[0].Width = 75;
-            dataGridView1.Columns[1].Width = 170;
-            dataGridView1.Columns[2].Width = 320;
-            dataGridView1.Columns[3].Width = 150;
 
-            //DataGridViewColumn column = dataGridView1.Columns[4];
-            //column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             List<string> prefectures = new List<string>();
             foreach (DataRow row in dtSource.Rows)
@@ -252,10 +265,6 @@ namespace TKBR_Lib.Forms
             this.Close();
         }
 
-        private void btnSentaku_Click(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
