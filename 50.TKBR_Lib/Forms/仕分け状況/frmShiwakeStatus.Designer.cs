@@ -73,7 +73,6 @@
             this.btnQuit.TabIndex = 99;
             this.btnQuit.Text = "戻る";
             this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // baseButton1
             // 
@@ -85,7 +84,6 @@
             this.baseButton1.TabIndex = 81;
             this.baseButton1.Text = "投入指示";
             this.baseButton1.UseVisualStyleBackColor = true;
-            this.baseButton1.Click += new System.EventHandler(this.baseButton1_Click);
             // 
             // label1
             // 

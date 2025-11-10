@@ -69,7 +69,6 @@
             this.btnModoru.TabIndex = 16;
             this.btnModoru.Text = "戻る";
             this.btnModoru.UseVisualStyleBackColor = true;
-            this.btnModoru.Click += new System.EventHandler(this.btnModoru_Click);
             // 
             // frmTonyuShiji
             // 

@@ -19,7 +19,7 @@ namespace TKBR_Lib.Forms
         public frmTonyuShiji()
         {
             InitializeComponent();
-            Initialize("CL", "投入指示画面");
+            Initialize("CL", "投入指示");
         }
         #endregion
 
@@ -27,16 +27,37 @@ namespace TKBR_Lib.Forms
         public override void formLoad(object sender, EventArgs e)
         {
             base.formLoad(sender, e);
+            InitFunc();
             LoadData();
             LoadDGVNohinSaki();
         }
-        private void btnModoru_Click(object sender, EventArgs e)
+        public override void ucFunction1_F10(EventArgsFunctionButtonClick e)
         {
-            this.Close();
+            base.ucFunction1_F10(e);
+            Close();
         }
         #endregion
 
         #region Methods
+        private void InitFunc()
+        {
+            ucFunction1.set_FunctionButtonControls(Keys.F10, btnModoru); //戻る
+
+            ucFunction1.SetFunctionButtons(
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("戻る", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false)
+                );
+        }
         private void LoadData()
         {
             lstTonyuShiji = new List<TonyuShijiModel>();

@@ -22,7 +22,7 @@ namespace TKBR_Lib.Forms
         public frmShiwakeToroku()
         {
             InitializeComponent();
-            Initialize("CL", "仕分登録画面");
+            Initialize("CL", "仕分登録");
         }
         #endregion
 
@@ -30,7 +30,7 @@ namespace TKBR_Lib.Forms
         public override void formLoad(object sender, EventArgs e)
         {
             base.formLoad(sender, e);
-
+            InitFunc();
             dgvMeisaiWidth = dgvMeisai.Size.Width;
             dgvNohinsakiWidth = dgvNohinsaki.Size.Width;
 
@@ -42,31 +42,35 @@ namespace TKBR_Lib.Forms
 
             LoadDGVMeisai();
         }
-        private void btnModoru_Click(object sender, EventArgs e)
+        private void InitFunc()
         {
-            this.Close();
+            ucFunction1.set_FunctionButtonControls(Keys.F1, btnToroku); //登録
+            ucFunction1.set_FunctionButtonControls(Keys.F4, btnNohinsakiKensaku); //納品先検索
+            ucFunction1.set_FunctionButtonControls(Keys.F5, btnMeisaiKensaku); //明細検索
+
+            ucFunction1.set_FunctionButtonControls(Keys.F10, btnModoru); //戻る
+
+            ucFunction1.SetFunctionButtons(
+                new FunctionButtons("登録", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("納品先検索", _CrLf: false),
+                new FunctionButtons("明細検索", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("戻る", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false)
+                );
         }
-        private void btnMeisaiKensaku_Click(object sender, EventArgs e)
+
+        public override void ucFunction1_F4(EventArgsFunctionButtonClick e)
         {
             try
             {
-                var frm = new frmMeisaiKensaku();
-                this.Hide();
-                frm.ShowDialog();
-            }
-            catch(Exception ex)
-            {
-                ClsMsgBox.ShowMessage(Text, "E999", ex);
-            }
-            finally
-            {
-                this.Show();
-            }
-        }
-        private void btnNohinsakiKensaku_Click(object sender, EventArgs e)
-        {
-            try
-            {
+                base.ucFunction1_F4(e);
                 var frm = new frmNohinSakiSearch();
                 this.Hide();
                 frm.ShowDialog();
@@ -79,8 +83,32 @@ namespace TKBR_Lib.Forms
             {
                 this.Show();
             }
-            
         }
+        public override void ucFunction1_F5(EventArgsFunctionButtonClick e)
+        {
+            try
+            {
+                base.ucFunction1_F5(e);
+                var frm = new frmMeisaiKensaku();
+                this.Hide();
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ClsMsgBox.ShowMessage(Text, "E999", ex);
+            }
+            finally
+            {
+                this.Show();
+            }
+        }
+
+        public override void ucFunction1_F10(EventArgsFunctionButtonClick e)
+        {
+            base.ucFunction1_F10(e);
+            Close();
+        }
+
         private void dgvMeisai_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var rowEdit = dgvMeisai.Rows[e.RowIndex];

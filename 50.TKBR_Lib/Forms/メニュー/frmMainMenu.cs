@@ -41,16 +41,38 @@ namespace TKBR_Lib.Forms
             base.formLoad(sender, e);
             // 画面の初期化
             InitFunc();
-
+            clearScreen();
             //InitDataGridView();
+            dgvList.AutoGenerateColumns = false;
             SetData();
 
         }
 
         private void InitFunc()
         {
-            clearScreen();
-            dgvList.AutoGenerateColumns = false;
+            ucFunction1.set_FunctionButtonControls(Keys.F1, btnImportShukka); //出荷データ取込
+            ucFunction1.set_FunctionButtonControls(Keys.F2, btnLaneSetting); //レーン設定
+            ucFunction1.set_FunctionButtonControls(Keys.F3, btnShowProgress); //状況照会
+            ucFunction1.set_FunctionButtonControls(Keys.F4, btnCancelProgress); //消込処理
+            ucFunction1.set_FunctionButtonControls(Keys.F5, btnCompleteProgress); //完了処理
+            ucFunction1.set_FunctionButtonControls(Keys.F7, btnMstNohinSaki); //納品先マスタ
+            ucFunction1.set_FunctionButtonControls(Keys.F8, btnMstSettings); //設定マスタ
+            ucFunction1.set_FunctionButtonControls(Keys.F10, btnQuit); //システム終了
+
+            ucFunction1.SetFunctionButtons(
+                new FunctionButtons("出荷データ取込", _CrLf: false),
+                new FunctionButtons("レーン設定", _CrLf: false),
+                new FunctionButtons("状況照会", _CrLf: false),
+                new FunctionButtons("消込処理", _CrLf: false),
+                new FunctionButtons("完了処理", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("納品先マスタ", _CrLf: false),
+                new FunctionButtons("設定マスタ", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("システム終了", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false)
+                );   
         }
 
         private void loadScreen(Form form)
@@ -103,15 +125,6 @@ namespace TKBR_Lib.Forms
             dgvList.DataSource = dt;
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            // 閉じるボタンの処理
-            if (ClsMsgBox.ShowMessage("終了", "Q999", "終了しますか？") == DialogResult.Yes)
-            {
-                Close();
-            }
-        }
-
         private void label2_Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, ((System.Windows.Forms.Label)sender).DisplayRectangle, Color.Black, 0, ButtonBorderStyle.None, Color.Black, 0, ButtonBorderStyle.None, Color.Black, 0, ButtonBorderStyle.None, Color.Black, 1, ButtonBorderStyle.Solid);
@@ -137,20 +150,29 @@ namespace TKBR_Lib.Forms
             }
         }
 
-        private void btnMenu_Button_Click(object sender, EventArgs e)
+        public override void ucFunction1_F2(EventArgsFunctionButtonClick e)
         {
-            Form form = null;
-            if (sender.Equals(btnShowProgress))
+            //レーン設定
+            base.ucFunction1_F2(e);
+            var frm = new frmShiwakeToroku();
+            loadScreen(frm);
+        }
+
+        public override void ucFunction1_F3(EventArgsFunctionButtonClick e)
+        {
+            //状況照会
+            base.ucFunction1_F3(e);
+            var frm = new frmShiwakeStatus();
+            loadScreen(frm);
+        }
+
+        public override void ucFunction1_F10(EventArgsFunctionButtonClick e)
+        {
+            //システム終了
+            base.ucFunction1_F10(e);
+            if(ClsMsgBox.ShowMessage("終了", "Q999", "終了しますか？") == DialogResult.Yes)
             {
-                form = new frmShiwakeStatus();
-            }
-            else if (sender.Equals(btnLaneSetting))
-            {
-                form = new frmShiwakeToroku();
-            }
-            if (form != null)
-            {
-                loadScreen(form);
+                Close();
             }
         }
     }

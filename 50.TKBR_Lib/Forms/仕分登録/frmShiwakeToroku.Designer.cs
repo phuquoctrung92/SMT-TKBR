@@ -85,7 +85,7 @@
             this.dateSekisaiPicker.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.dateSekisaiPicker.Location = new System.Drawing.Point(132, 60);
             this.dateSekisaiPicker.Name = "dateSekisaiPicker";
-            this.dateSekisaiPicker.Size = new System.Drawing.Size(190, 36);
+            this.dateSekisaiPicker.Size = new System.Drawing.Size(201, 36);
             this.dateSekisaiPicker.TabIndex = 0;
             this.dateSekisaiPicker.Value = new System.DateTime(2025, 8, 29, 0, 0, 0, 0);
             // 
@@ -125,7 +125,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label5.Location = new System.Drawing.Point(28, 130);
+            this.label5.Location = new System.Drawing.Point(28, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 133;
@@ -137,11 +137,10 @@
             this.btnNohinsakiKensaku.Font = new System.Drawing.Font("MS Gothic", 18F);
             this.btnNohinsakiKensaku.Location = new System.Drawing.Point(132, 111);
             this.btnNohinsakiKensaku.Name = "btnNohinsakiKensaku";
-            this.btnNohinsakiKensaku.Size = new System.Drawing.Size(190, 40);
+            this.btnNohinsakiKensaku.Size = new System.Drawing.Size(201, 40);
             this.btnNohinsakiKensaku.TabIndex = 2;
             this.btnNohinsakiKensaku.Text = "納品先検索";
             this.btnNohinsakiKensaku.UseVisualStyleBackColor = true;
-            this.btnNohinsakiKensaku.Click += new System.EventHandler(this.btnNohinsakiKensaku_Click);
             // 
             // lblCBMGokei
             // 
@@ -209,13 +208,12 @@
             // 
             this.btnMeisaiKensaku.Caption = null;
             this.btnMeisaiKensaku.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnMeisaiKensaku.Location = new System.Drawing.Point(131, 396);
+            this.btnMeisaiKensaku.Location = new System.Drawing.Point(132, 396);
             this.btnMeisaiKensaku.Name = "btnMeisaiKensaku";
-            this.btnMeisaiKensaku.Size = new System.Drawing.Size(190, 40);
+            this.btnMeisaiKensaku.Size = new System.Drawing.Size(201, 40);
             this.btnMeisaiKensaku.TabIndex = 3;
             this.btnMeisaiKensaku.Text = "明細検索";
             this.btnMeisaiKensaku.UseVisualStyleBackColor = true;
-            this.btnMeisaiKensaku.Click += new System.EventHandler(this.btnMeisaiKensaku_Click);
             // 
             // dgvMeisai
             // 
@@ -237,7 +235,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label6.Location = new System.Drawing.Point(28, 415);
+            this.label6.Location = new System.Drawing.Point(28, 408);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 24);
             this.label6.TabIndex = 136;
@@ -247,7 +245,7 @@
             // 
             this.btnToroku.Caption = null;
             this.btnToroku.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnToroku.Location = new System.Drawing.Point(1141, 832);
+            this.btnToroku.Location = new System.Drawing.Point(28, 832);
             this.btnToroku.Name = "btnToroku";
             this.btnToroku.Size = new System.Drawing.Size(180, 60);
             this.btnToroku.TabIndex = 4;
@@ -264,7 +262,6 @@
             this.btnModoru.TabIndex = 5;
             this.btnModoru.Text = "戻る";
             this.btnModoru.UseVisualStyleBackColor = true;
-            this.btnModoru.Click += new System.EventHandler(this.btnModoru_Click);
             // 
             // frmShiwakeToroku
             // 

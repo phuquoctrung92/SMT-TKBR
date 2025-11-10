@@ -20,7 +20,7 @@ namespace TKBR_Lib.Forms
         public frmNohinSakiSearch()
         {
             InitializeComponent();
-            Initialize("CL", "納品先検索画面");
+            Initialize("CL", "納品先検索");
 
         }
         #endregion
@@ -29,28 +29,52 @@ namespace TKBR_Lib.Forms
         public override void formLoad(object sender, EventArgs e)
         {
             base.formLoad(sender, e);
-
+            InitFunc();
             LoadData();
 
             LoadTodofuken();
 
             LoadDGVNohinSaki(lstNohinsakiKensaku);
         }
-        private void btnKensaku_Click(object sender, EventArgs e)
+
+        public override void ucFunction1_F5(EventArgsFunctionButtonClick e)
         {
-            var lstKensaku = lstNohinsakiKensaku.Where(x => 
+            base.ucFunction1_F5(e);
+            var lstKensaku = lstNohinsakiKensaku.Where(x =>
                 (string.IsNullOrEmpty(txtNohinsakimei.Text) || x.Nohinsakimei.Contains(txtNohinsakimei.Text))
              && (string.IsNullOrEmpty(cbbTodofuken.SelectedValue) || x.Todofuken == cbbTodofuken.SelectedValue)).ToList();
 
             LoadDGVNohinSaki(lstKensaku);
         }
-        private void btnModoru_Click(object sender, EventArgs e)
+        public override void ucFunction1_F10(EventArgsFunctionButtonClick e)
         {
-            this.Close();
+            base.ucFunction1_F10(e);
+            Close();
         }
         #endregion
 
         #region Methods
+        private void InitFunc()
+        {
+            ucFunction1.set_FunctionButtonControls(Keys.F1, btnSentaku); //選択
+            ucFunction1.set_FunctionButtonControls(Keys.F5, btnKensaku); //検索
+            ucFunction1.set_FunctionButtonControls(Keys.F10, btnModoru); //戻る
+
+            ucFunction1.SetFunctionButtons(
+                new FunctionButtons("選択", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("検索", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("戻る", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false)
+                );
+        }
         private void LoadData()
         {
             lstNohinsakiKensaku = new List<NohinsakiKensakuModel>();

@@ -22,7 +22,7 @@ namespace TKBR_Lib.Forms
         public frmMeisaiKensaku()
         {
             InitializeComponent();
-            Initialize("CL", "明細検索画面");
+            Initialize("CL", "明細検索");
         }
         #endregion
 
@@ -30,7 +30,7 @@ namespace TKBR_Lib.Forms
         public override void formLoad(object sender, EventArgs e)
         {
             base.formLoad(sender, e);
-
+            InitFunc();
             dgvMeisaiWidth = dgvMeisai.Size.Width;
             dgvNohinsakiWidth = dgvNohinsaki.Size.Width;
 
@@ -38,22 +38,31 @@ namespace TKBR_Lib.Forms
 
             LoadDGVNohinSaki();
         }
-        private void btnModoru_Click(object sender, EventArgs e)
+
+        public override void ucFunction1_F4(EventArgsFunctionButtonClick e)
         {
-            this.Close();
-        }
-        private void btnNohinsakiSelectAll_Click(object sender, EventArgs e)
-        {
+            base.ucFunction1_F4(e);
             dgvNohinsaki.SelectAll();
         }
-        private void btnMeisaiSelectAll_Click(object sender, EventArgs e)
+
+        public override void ucFunction1_F5(EventArgsFunctionButtonClick e)
         {
+            base.ucFunction1_F5(e);
             dgvMeisai.SelectAll();
         }
-        private void btnMeisaiKaijoAll_Click(object sender, EventArgs e)
+
+        public override void ucFunction1_F6(EventArgsFunctionButtonClick e)
         {
+            base.ucFunction1_F6(e);
             dgvMeisai.ClearSelection();
         }
+
+        public override void ucFunction1_F10(EventArgsFunctionButtonClick e)
+        {
+            base.ucFunction1_F10(e);
+            Close();
+        }
+
         private void dgvNohinsaki_SelectionChanged(object sender, EventArgs e)
         {
             List<string> lstNohinsakimei = new List<string>();
@@ -78,10 +87,34 @@ namespace TKBR_Lib.Forms
         private void dgvMeisai_DataSourceChanged(object sender, EventArgs e)
         {
             dgvMeisai.Size = new Size(dgvMeisai.DisplayedRowCount(false) < dgvMeisai.RowCount ? dgvMeisaiWidth + 17 : dgvMeisaiWidth, dgvMeisai.Size.Height);
-        }        
+        }
         #endregion
 
         #region Methods
+        private void InitFunc()
+        {
+            ucFunction1.set_FunctionButtonControls(Keys.F1, btnToroku); //登録
+            ucFunction1.set_FunctionButtonControls(Keys.F4, btnNohinsakiSelectAll); //納品先のすべて表示
+            ucFunction1.set_FunctionButtonControls(Keys.F5, btnMeisaiSelectAll); //明細の全て選択
+            ucFunction1.set_FunctionButtonControls(Keys.F6, btnMeisaiKaijoAll); //明細の全て解除
+
+            ucFunction1.set_FunctionButtonControls(Keys.F10, btnModoru); //戻る
+
+            ucFunction1.SetFunctionButtons(
+                new FunctionButtons("登録", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("全て表示", _CrLf: false),
+                new FunctionButtons("全て選択", _CrLf: false),
+                new FunctionButtons("全て解除", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("戻る", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false)
+                );
+        }
         private void loadData()
         {
             lstNohinsaki = new List<NohinsakiModel>();

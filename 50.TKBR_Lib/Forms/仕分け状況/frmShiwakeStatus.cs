@@ -22,6 +22,7 @@ namespace TKBR_Lib.Forms
 
         private void frmShiwakeStatus_Load(object sender, EventArgs e)
         {
+            InitFunc();
             lblProgess.Text = "10,100 / 14,100";
             lblProgess_Percent.Text = "71.6%";
             dgvList.AutoGenerateColumns = false;
@@ -33,11 +34,52 @@ namespace TKBR_Lib.Forms
             ControlPaint.DrawBorder(e.Graphics, ((Label)sender).DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
+        private void InitFunc()
         {
-            Close();
+            ucFunction1.set_FunctionButtonControls(Keys.F1, baseButton1); //投入指示
+            ucFunction1.set_FunctionButtonControls(Keys.F10, btnQuit); //戻る
+
+            ucFunction1.SetFunctionButtons(
+                new FunctionButtons("投入指示", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("戻る", _CrLf: false),
+                new FunctionButtons("", _CrLf: false),
+                new FunctionButtons("", _CrLf: false)
+                );
         }
 
+        public override void ucFunction1_F1(EventArgsFunctionButtonClick e)
+        {
+            try
+            {
+                base.ucFunction1_F1(e);
+                var frm = new frmTonyuShiji();
+                this.Hide();
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ClsMsgBox.ShowMessage(Text, "E999", ex);
+            }
+            finally
+            {
+                this.Show();
+            }
+
+        }
+
+        public override void ucFunction1_F10(EventArgsFunctionButtonClick e)
+        {
+            base.ucFunction1_F10(e);
+            Close();
+        }
         private void setData()
         {
             try
@@ -99,24 +141,6 @@ namespace TKBR_Lib.Forms
             catch (Exception ex)
             {
                 ClsMsgBox.ShowMessage(this.Text, "E999", ex);
-            }
-        }
-
-        private void baseButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var frm = new frmTonyuShiji();
-                this.Hide();
-                frm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                ClsMsgBox.ShowMessage(Text, "E999", ex);
-            }
-            finally
-            {
-                this.Show();
             }
         }
     }

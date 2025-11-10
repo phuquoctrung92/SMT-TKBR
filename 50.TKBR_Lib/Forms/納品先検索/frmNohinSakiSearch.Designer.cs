@@ -120,7 +120,6 @@
             this.btnKensaku.TabIndex = 2;
             this.btnKensaku.Text = "検索";
             this.btnKensaku.UseVisualStyleBackColor = false;
-            this.btnKensaku.Click += new System.EventHandler(this.btnKensaku_Click);
             // 
             // lblRen
             // 
@@ -172,7 +171,7 @@
             // 
             this.btnSentaku.Caption = null;
             this.btnSentaku.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnSentaku.Location = new System.Drawing.Point(1100, 830);
+            this.btnSentaku.Location = new System.Drawing.Point(12, 830);
             this.btnSentaku.Name = "btnSentaku";
             this.btnSentaku.Size = new System.Drawing.Size(180, 60);
             this.btnSentaku.TabIndex = 3;
@@ -189,7 +188,6 @@
             this.btnModoru.TabIndex = 4;
             this.btnModoru.Text = "戻る";
             this.btnModoru.UseVisualStyleBackColor = true;
-            this.btnModoru.Click += new System.EventHandler(this.btnModoru_Click);
             // 
             // dgvNohinsaki
             // 

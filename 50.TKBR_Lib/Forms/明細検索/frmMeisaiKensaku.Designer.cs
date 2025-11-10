@@ -48,8 +48,8 @@
             this.lblMeisaisu = new CtrlLib.MyControls.Label();
             this.label12 = new CtrlLib.MyControls.Label();
             this.lblRen = new CtrlLib.MyControls.Label();
-            this.baseButton1 = new CtrlLib.MyControls.BaseButton();
-            this.baseButton2 = new CtrlLib.MyControls.BaseButton();
+            this.btnToroku = new CtrlLib.MyControls.BaseButton();
+            this.btnModoru = new CtrlLib.MyControls.BaseButton();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNohinsaki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeisai)).BeginInit();
@@ -87,7 +87,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label5.Location = new System.Drawing.Point(28, 123);
+            this.label5.Location = new System.Drawing.Point(28, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 13;
@@ -102,7 +102,7 @@
             this.dgvNohinsaki.Name = "dgvNohinsaki";
             this.dgvNohinsaki.ReadOnly = true;
             this.dgvNohinsaki.RowTemplate.Height = 21;
-            this.dgvNohinsaki.Size = new System.Drawing.Size(1478, 196);
+            this.dgvNohinsaki.Size = new System.Drawing.Size(1478, 210);
             this.dgvNohinsaki.TabIndex = 14;
             this.dgvNohinsaki.TabStop = false;
             this.dgvNohinsaki.DataSourceChanged += new System.EventHandler(this.dgvNohinsaki_DataSourceChanged);
@@ -112,13 +112,12 @@
             // 
             this.btnNohinsakiSelectAll.Caption = null;
             this.btnNohinsakiSelectAll.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnNohinsakiSelectAll.Location = new System.Drawing.Point(1355, 104);
+            this.btnNohinsakiSelectAll.Location = new System.Drawing.Point(1327, 104);
             this.btnNohinsakiSelectAll.Name = "btnNohinsakiSelectAll";
-            this.btnNohinsakiSelectAll.Size = new System.Drawing.Size(152, 40);
+            this.btnNohinsakiSelectAll.Size = new System.Drawing.Size(180, 40);
             this.btnNohinsakiSelectAll.TabIndex = 0;
             this.btnNohinsakiSelectAll.Text = "全て表示";
             this.btnNohinsakiSelectAll.UseVisualStyleBackColor = true;
-            this.btnNohinsakiSelectAll.Click += new System.EventHandler(this.btnNohinsakiSelectAll_Click);
             // 
             // dgvMeisai
             // 
@@ -140,7 +139,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.label6.Location = new System.Drawing.Point(28, 407);
+            this.label6.Location = new System.Drawing.Point(28, 400);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 24);
             this.label6.TabIndex = 111;
@@ -152,23 +151,21 @@
             this.btnMeisaiSelectAll.Font = new System.Drawing.Font("MS Gothic", 18F);
             this.btnMeisaiSelectAll.Location = new System.Drawing.Point(131, 388);
             this.btnMeisaiSelectAll.Name = "btnMeisaiSelectAll";
-            this.btnMeisaiSelectAll.Size = new System.Drawing.Size(152, 40);
+            this.btnMeisaiSelectAll.Size = new System.Drawing.Size(180, 40);
             this.btnMeisaiSelectAll.TabIndex = 1;
             this.btnMeisaiSelectAll.Text = "全て選択";
             this.btnMeisaiSelectAll.UseVisualStyleBackColor = true;
-            this.btnMeisaiSelectAll.Click += new System.EventHandler(this.btnMeisaiSelectAll_Click);
             // 
             // btnMeisaiKaijoAll
             // 
             this.btnMeisaiKaijoAll.Caption = null;
             this.btnMeisaiKaijoAll.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.btnMeisaiKaijoAll.Location = new System.Drawing.Point(289, 388);
+            this.btnMeisaiKaijoAll.Location = new System.Drawing.Point(336, 388);
             this.btnMeisaiKaijoAll.Name = "btnMeisaiKaijoAll";
-            this.btnMeisaiKaijoAll.Size = new System.Drawing.Size(152, 40);
+            this.btnMeisaiKaijoAll.Size = new System.Drawing.Size(180, 40);
             this.btnMeisaiKaijoAll.TabIndex = 2;
             this.btnMeisaiKaijoAll.Text = "全て解除";
             this.btnMeisaiKaijoAll.UseVisualStyleBackColor = true;
-            this.btnMeisaiKaijoAll.Click += new System.EventHandler(this.btnMeisaiKaijoAll_Click);
             // 
             // lblSekisaiDate
             // 
@@ -287,36 +284,35 @@
             this.lblRen.Text = "3";
             this.lblRen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // baseButton1
+            // btnToroku
             // 
-            this.baseButton1.Caption = null;
-            this.baseButton1.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.baseButton1.Location = new System.Drawing.Point(1141, 832);
-            this.baseButton1.Name = "baseButton1";
-            this.baseButton1.Size = new System.Drawing.Size(180, 60);
-            this.baseButton1.TabIndex = 3;
-            this.baseButton1.Text = "登録";
-            this.baseButton1.UseVisualStyleBackColor = true;
+            this.btnToroku.Caption = null;
+            this.btnToroku.Font = new System.Drawing.Font("MS Gothic", 18F);
+            this.btnToroku.Location = new System.Drawing.Point(28, 832);
+            this.btnToroku.Name = "btnToroku";
+            this.btnToroku.Size = new System.Drawing.Size(180, 60);
+            this.btnToroku.TabIndex = 3;
+            this.btnToroku.Text = "登録";
+            this.btnToroku.UseVisualStyleBackColor = true;
             // 
-            // baseButton2
+            // btnModoru
             // 
-            this.baseButton2.Caption = null;
-            this.baseButton2.Font = new System.Drawing.Font("MS Gothic", 18F);
-            this.baseButton2.Location = new System.Drawing.Point(1327, 832);
-            this.baseButton2.Name = "baseButton2";
-            this.baseButton2.Size = new System.Drawing.Size(180, 60);
-            this.baseButton2.TabIndex = 4;
-            this.baseButton2.Text = "戻る";
-            this.baseButton2.UseVisualStyleBackColor = true;
-            this.baseButton2.Click += new System.EventHandler(this.btnModoru_Click);
+            this.btnModoru.Caption = null;
+            this.btnModoru.Font = new System.Drawing.Font("MS Gothic", 18F);
+            this.btnModoru.Location = new System.Drawing.Point(1327, 832);
+            this.btnModoru.Name = "btnModoru";
+            this.btnModoru.Size = new System.Drawing.Size(180, 60);
+            this.btnModoru.TabIndex = 4;
+            this.btnModoru.Text = "戻る";
+            this.btnModoru.UseVisualStyleBackColor = true;
             // 
             // frmMeisaiKensaku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1534, 923);
-            this.Controls.Add(this.baseButton1);
-            this.Controls.Add(this.baseButton2);
+            this.Controls.Add(this.btnToroku);
+            this.Controls.Add(this.btnModoru);
             this.Controls.Add(this.lblMeisaisu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblCBMGokei);
@@ -362,8 +358,8 @@
             this.Controls.SetChildIndex(this.lblMeisaisu, 0);
             this.Controls.SetChildIndex(this.pnHeader, 0);
             this.Controls.SetChildIndex(this.ucFunction1, 0);
-            this.Controls.SetChildIndex(this.baseButton2, 0);
-            this.Controls.SetChildIndex(this.baseButton1, 0);
+            this.Controls.SetChildIndex(this.btnModoru, 0);
+            this.Controls.SetChildIndex(this.btnToroku, 0);
             this.pnHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNohinsaki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeisai)).EndInit();
@@ -394,7 +390,7 @@
         private CtrlLib.MyControls.Label lblMeisaisu;
         private CtrlLib.MyControls.Label label12;
         private CtrlLib.MyControls.Label lblRen;
-        private CtrlLib.MyControls.BaseButton baseButton1;
-        private CtrlLib.MyControls.BaseButton baseButton2;
+        private CtrlLib.MyControls.BaseButton btnToroku;
+        private CtrlLib.MyControls.BaseButton btnModoru;
     }
 }
